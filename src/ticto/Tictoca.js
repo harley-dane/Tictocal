@@ -5,7 +5,7 @@ import  Greenc from "../Image/Greenc.png"
 
 let data = ["","", "", "", "", "", "", "", ""]
 
-
+/* The start of Tictica conponent*/
 const Tictoca = () => {
 
 let [count, setCount] = useState(0)
@@ -42,7 +42,7 @@ setCount(++count);
 }
 checkWinner()
 }
-
+/* function for the verifying the winner using if statements*/
 const checkWinner = () => {
 if (data[0]===data[1] && data[1]===data[2] && data[2]!=="")
 {
@@ -86,7 +86,7 @@ else if (data[2]===data[4] && data[4]===data[6] && data[6]!=="")
 Won(data[6]);
 }
 }
-
+/*  function to check the type of image that won*/
 const Won = (winner) => {
 setLock(true);
 if (winner==="x")
@@ -98,7 +98,7 @@ else
     titleRef.current.innerHTML = `Congratulation: <img src= ${circley}>`
 }
 }
-
+/* reset function to reset the whole page after the game completed */
 const reset = () => {
     setLock(false);
     data = ["","", "", "", "", "", "", "", ""]
@@ -133,6 +133,7 @@ return (
 
 
 </div>
+    /* reset button */
 <button className="reset" onClick={()=>{reset()}}>Reset</button>
 </div>
     )
